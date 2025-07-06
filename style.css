@@ -1,0 +1,310 @@
+ /* 1. Variáveis e Estilos Globais */
+        :root {
+            --primary-color: #6A0DAD;
+            --secondary-color: #2980b9;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --background-color: #f4f7f6;
+            --white-color: #ffffff;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth; /* Habilita a rolagem suave nativa */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            background-color: var(--background-color);
+            color: var(--dark-color);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+        
+        h1, h2, h3 {
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark-color);
+        }
+
+        /* 2. Header e Navegação */
+        .main-header {
+            background: var(--white-color);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: background-color 0.4s ease, padding 0.4s ease;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .main-nav ul li {
+            margin-left: 25px;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 400;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Menu Hambúrguer para Mobile */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle .bar {
+            height: 3px;
+            width: 25px;
+            background-color: var(--dark-color);
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        /* 3. Seção Hero (Home) */
+        #home {
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url(assets/fundo/img-fundo.png) no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white-color);
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        /* 4. Seções (Sobre, Projetos, Contato) */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white-color);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* 5. Formulário de Contato */
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white-color);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: none; /* Escondido por padrão */
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background: var(--primary-color);
+            color: var(--white-color);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--secondary-color);
+        }
+
+        /* 6. Footer */
+        .main-footer {
+            background: var(--dark-color);
+            color: var(--light-color);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* 7. Efeito de Animação (Fade-in) */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 8. Layout Responsivo */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            /* Adapta o menu para mobile */
+            .menu-toggle {
+                display: flex;
+            }
+
+            .main-nav {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: var(--white-color);
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s ease-in-out;
+            }
+            
+            .main-nav.active {
+                max-height: 300px; /* Altura suficiente para os links */
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+
+            .main-nav ul li {
+                margin: 0;
+            }
+            
+            .main-nav ul li a {
+                padding: 1rem;
+                display: block;
+                width: 100%;
+            }
+            
+            .main-nav a::after {
+                display: none; /* Remove a linha de baixo no mobile */
+            }
+        }

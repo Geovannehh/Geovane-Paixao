@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Metadados Essenciais -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Básico (Otimização para Mecanismos de Busca) -->
+    <title>Geovane Paixão | Desenvolvedor Front-End</title>
+    <meta name="description" content="Portfólio pessoal de Geovane Paixão, um desenvolvedor Front-End focado em criar experiências web modernas, interativas e responsivas.">
+    <meta name="keywords" content="Desenvolvedor Front-End, HTML, CSS, JavaScript, Portfolio, Web Design Responsivo">
+    <meta name="author" content="Geovane Paixão">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+    <!-- Cabeçalho com Navegação Funcional -->
+    <header class="main-header">
+        <div class="container">
+            <a href="#home" class="logo">Geovane Paixão</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sobre">Sobre Mim</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção 1: Home -->
+        <section id="home">
+            <div class="hero-content fade-in-section is-visible">
+                <img src="assets/img-perfil/img-sem-fundo 02.png" alt="">
+                <h1>Desenvolvedor Front-End</h1>
+                <p>Transformando ideias em interfaces web interativas e responsivas.</p>
+                <a href="#projetos" class="cta-button">Conheça meus trabalhos</a>
+            </div>
+        </section>
+
+        <!-- Seção 2: Sobre Mim -->
+        <section id="sobre" class="fade-in-section">
+            <div class="container">
+                <h2>Sobre Mim</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem auto;">
+                    Sou um profissional apaixonado por tecnologia e design, com foco no desenvolvimento Front-End. Minha missão é criar websites que não apenas funcionem perfeitamente, mas que também proporcionem uma experiência de usuário agradável e intuitiva, seguindo as melhores práticas do mercado.
+                </p>
+            </div>
+        </section>
+
+        <!-- Seção 3: Projetos -->
+        <section id="projetos" class="fade-in-section">
+            <div class="container">
+                <h2>Meus Projetos</h2>
+                <div class="card-container">
+                    <div class="card" >
+                        <h3 >Portfolio</h3>
+                        <p>Minha Primeira tentativa de fazer um Portfolio, com layout responsivo em HTML e CSS, foco em design e usabilidade. Utilizando Bootstrap 5.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Mundo Invertido</h3>
+                        <p>Baseado em minha Série Favorita com Design moderno com Som, com HTML, CSS e JS.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Livro de Receitas</h3>
+                        <p>Página de receita de Cupcake com HTML e CSS, foco em tipografia e responsividade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 4: Contato com Validação via JavaScript -->
+        <section id="contato" class="fade-in-section">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+                <form id="contactForm" class="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" name="name" placeholder="Seu nome">
+                        <p id="nameError" class="error-message">O campo nome é obrigatório.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com">
+                        <p id="emailError" class="error-message">Por favor, insira um e-mail válido.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Deixe sua mensagem..."></textarea>
+                        <p id="messageError" class="error-message">Por favor, escreva uma mensagem.</p>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Geovane Paixão. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
